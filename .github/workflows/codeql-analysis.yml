@@ -43,10 +43,11 @@ jobs:
         with:
           languages: java-kotlin
       - name: Compile production code
-        run: >-
-          ./gradlew clean classes --rerun-tasks --no-build-cache --no-daemon --stacktrace
-          -Dorg.gradle.java.installations.paths="$JAVA_HOME,$JAVA_HOME_8_X64,$JAVA_HOME_25_X64"
-          -Dorg.gradle.java.installations.auto-detect=false
-          -Dorg.gradle.java.installations.auto-download=false
+        run: |
+          chmod +x ./gradlew
+          ./gradlew clean classes --rerun-tasks --no-build-cache --no-daemon --stacktrace \
+            -Dorg.gradle.java.installations.paths="$JAVA_HOME,$JAVA_HOME_8_X64,$JAVA_HOME_25_X64" \
+            -Dorg.gradle.java.installations.auto-detect=false \
+            -Dorg.gradle.java.installations.auto-download=false
       - name: Analyze
         uses: github/codeql-action/analyze@db488ddef3bf6cb639b32c2e9a7c0a7ea8271d28 # v4

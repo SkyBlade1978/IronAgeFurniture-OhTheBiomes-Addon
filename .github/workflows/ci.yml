@@ -131,12 +131,13 @@ jobs:
           echo '0ede6fac09cf7019d214811c32ae1e805b1814776eca983cc9ad3a7cdffbf635  run-dependencies/artifacts/BiomesYouGo1.7.1.jar' | sha256sum --check
           echo '5782debc8cbd1417e95c1a9726924f73612ed01c57ab289f40b5d7d2c1763494  run-dependencies/artifacts/BYG_1.12.2_1.9.jar' | sha256sum --check
       - name: Build and audit
-        run: >-
-          ./gradlew clean check build javadoc verifyReleaseArtifacts verifyReleaseChecksums prepareReleaseBundle
-          --no-daemon --stacktrace
-          -Dorg.gradle.java.installations.paths="$JAVA_HOME,$JAVA_HOME_8_X64,$JAVA_HOME_25_X64"
-          -Dorg.gradle.java.installations.auto-detect=false
-          -Dorg.gradle.java.installations.auto-download=false
+        run: |
+          chmod +x ./gradlew
+          ./gradlew clean check build javadoc verifyReleaseArtifacts verifyReleaseChecksums prepareReleaseBundle \
+            --no-daemon --stacktrace \
+            -Dorg.gradle.java.installations.paths="$JAVA_HOME,$JAVA_HOME_8_X64,$JAVA_HOME_25_X64" \
+            -Dorg.gradle.java.installations.auto-detect=false \
+            -Dorg.gradle.java.installations.auto-download=false
       - name: Verify Eclipse project
         run: >-
           ./gradlew prepareEclipse verifyEclipseProductionClasspath
