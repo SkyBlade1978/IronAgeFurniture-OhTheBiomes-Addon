@@ -7,4 +7,6 @@
 - Added all 16 upholstery colours to both padded bench styles, preserving colours through crafting, placement, drops, pick block and world reloads.
 - Added exact recipe advancements so furniture unlocks from its own ingredients rather than unrelated materials.
 - Added compatibility verification for both official BYG 1.7.1 and the community-maintained BYG 1.12.2 Fixed 1.9 build.
+- Fixed Great Oak furniture so every model uses BYG's published Great Oak plank and log textures.
+- Fixed the generated Eclipse launch configurations so they consistently target the imported add-on project.
 - Added deterministic data generation, reproducible release jars and guarded release automation.

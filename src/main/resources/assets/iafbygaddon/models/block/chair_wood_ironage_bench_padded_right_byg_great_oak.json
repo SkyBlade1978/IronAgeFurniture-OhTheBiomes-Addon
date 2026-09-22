@@ -2,9 +2,9 @@
   "credit": "Made with Blockbench",
   "textures": {
     "upholstery": "minecraft:blocks/wool_colored_red",
-    "4": "byg:blocks/great_byg_great_oak_log_side",
-    "5": "byg:blocks/great_byg_great_oak_planks",
-    "particle": "byg:blocks/great_byg_great_oak_log_side"
+    "4": "byg:blocks/great_oak_log_side",
+    "5": "byg:blocks/great_oak_planks",
+    "particle": "byg:blocks/great_oak_log_side"
   },
   "elements": [
     {
